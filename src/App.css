@@ -17,8 +17,9 @@ h1 {
   color: white;
 }
 
-li {
+li{
   color: white;
+  list-style:none;
 }
 
 .Weather .weather-temperature img {
@@ -27,6 +28,3 @@ li {
   width: 64px;
 }
 
-li{
-  list-style: none;
-}
