@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
+import "./Weather.css";
 
 export default function Weather() {
-  let [city, setCity] = useState("");
+  let [city, setCity] = useState("props.defaultCity");
   let [forecast, setForecast] = useState("");
 
   function showWeather(response) {
@@ -15,20 +17,31 @@ export default function Weather() {
     });
 
     setForecast(
-      <div className="weatherResults">
-        <h2>Weather in {city} is:</h2>
-        <ul>
-          <li>Temperature:{Math.round(response.data.main.temp)}°C</li>
-          <li>Description: {capitalizedDescription.trim()}</li>
-          <li> Humidity: {response.data.main.humidity}%</li>
-          <li> Wind Speed: {Math.round(response.data.wind.speed)} km/h</li>
-          <li>
-            <img
-              src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
-              alt="{response.description}"
-            />
-          </li>
-        </ul>
+      <div className="WeatherResults">
+        <h2> {city}</h2>
+       
+<div class="container-fluid">
+        <div class="row">
+          <div class="col-xs-6">
+            <ul>
+              <li>Temperature:{Math.round(response.data.main.temp)}°C</li>
+              <li>Description: {capitalizedDescription.trim()}</li>
+              <li>
+                <img
+                  src={`http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`}
+                  alt="{response.description}"
+                />
+              </li>
+            </ul>
+          </div>
+          <div class="col-xs-6">
+            <ul>
+              <li> Humidity: {response.data.main.humidity}%</li>
+              <li> Wind Speed: {Math.round(response.data.wind.speed)} km/h</li>
+            </ul>
+          </div>
+        </div>
+      </div>
       </div>
     );
   }
@@ -48,10 +61,12 @@ export default function Weather() {
     <div className="Weather">
       <form onSubmit={handleSubmit}>
         {}
-        <input type="search" placeholder="Type a city" onChange={updateCity} />
-        <input type="submit" value="Search" />
+        <input className="TypeCity" type="search" placeholder="Type a city" onChange={updateCity} />
+        <input className="SearchCity" type="submit" value="Search" />
       </form>
       <div>{forecast}</div>
+      <WeatherForecast />
     </div>
   );
 }
+
