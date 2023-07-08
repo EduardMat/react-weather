@@ -3,7 +3,7 @@ import Weather from "./Weather";
 import Link from "./Link";
 import './App.css';
 
-function App() {
+export default function App() {
   return (
     <div className="App">
     <Weather defaultCity ="New York"/>
@@ -14,4 +14,3 @@ function App() {
   );
 }
 
-export default App;

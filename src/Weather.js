@@ -65,6 +65,8 @@ export default function Weather() {
         <input className="SearchCity" type="submit" value="Search" />
       </form>
       <div>{forecast}</div>
+      <br/>
+      <hr/>
       <WeatherForecast />
     </div>
   );
