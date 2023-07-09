@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import "bootstrap/dist/css/bootstrap.css";
 import WeatherForecast from "./WeatherForecast";
 import axios from "axios";
 import "./Weather.css";
@@ -20,9 +21,9 @@ export default function Weather() {
       <div className="WeatherResults">
         <h2> {city}</h2>
        
-<div class="container-fluid">
-        <div class="row">
-          <div class="col-xs-6">
+        <div className="row">
+
+          <div className="col-6">
             <ul>
               <li>Temperature:{Math.round(response.data.main.temp)}°C</li>
               <li>Description: {capitalizedDescription.trim()}</li>
@@ -34,15 +35,17 @@ export default function Weather() {
               </li>
             </ul>
           </div>
-          <div class="col-xs-6">
+
+          <div className="col-6">
             <ul>
               <li> Humidity: {response.data.main.humidity}%</li>
               <li> Wind Speed: {Math.round(response.data.wind.speed)} km/h</li>
             </ul>
           </div>
+
         </div>
       </div>
-      </div>
+
     );
   }
 

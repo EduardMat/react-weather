@@ -10,7 +10,7 @@ h2{
 .TypeCity{
     margin: 10px;
     padding-left:6px;
-    padding-right: 6px;
+    padding-right: 46px;
     border-radius: 4px;
 
 
@@ -18,7 +18,7 @@ h2{
 
 .SearchCity{
 margin: 15px;
-padding-left:6px;
-padding-right: 6px;
+padding-left:16px;
+padding-right: 16px;
 border-radius: 4px;
 }
